@@ -38,7 +38,7 @@ var socket = io.connect();
   });
   socket.on('joinResult', function(result) {
     $('#room').text(result.room);
-    $('#messages').append(divSystemContentElement('Room changed.'));
+    $('#messages').append(divSystemContentElement('Room changed to ' + result.room + '.'));
   });
   socket.on('message', function (message) {
     var newElement = $('<div></div>').text(message.text);
